@@ -847,3 +847,15 @@ footer {
   .footer-grid { flex-wrap: wrap; gap: 36px; }
   .partners { padding: 60px 24px; }
 }
+.bank-logo {
+  height: 48px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  transition: all 0.4s ease;
+  margin-bottom: 8px;
+}
+.partner-card:hover .bank-logo {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 12px rgba(255, 122, 0, 0.6));
+}
