@@ -1,82 +1,338 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Fintech Mock</title>
+  <meta charset="UTF-8">
+  <title>PayCliq — Payments Built for Business</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="mockup.css">
 </head>
 
 <body>
 
-  <div class="nav">
-    <h2>PayCliq</h2>
-    <div>
-      <a href="#">Products</a>
-      <a href="#">Company</a>
-      <a href="#">Login</a>
-      <a href="#">Register Your Business</a>
-      <a href="#">FAQ</a>
-      <a href="#">Partnership</a>
-    </div>
-  </div>
+<nav class="nav" id="navbar">
 
-  <div class="hero">
+  <a href="#" class="nav-logo">
+    <img src="pay cliq.png" class="logo" alt="PayCliq">
+  </a>
 
-    <div class="hero-text">
-      <h1>Modern payments for growing businesses</h1>
-      <p>Send, receive and manage money without stress.</p>
-      <button>Get Started</button>
-    </div>
+  <div class="nav-right">
 
-    <div class="hero-img">
-  <img src="pos.png" class="pos">
-</div>
-  </div>
-
-  <div class="features">
-
-    <h2>Everything you need</h2>
-
-    <div class="grid">
-
-      <div class="card">Fast Payments</div>
-      <div class="card">Secure System</div>
-      <div class="card">Analytics</div>
-      <div class="card">Automation</div>
-      <div class="card">Multi Accounts</div>
-      <div class="card">24/7 Support</div>
-
-    </div>
-
-  </div>
-
-
-  <div class="stats">
-
-    <div class="stat">
-      <h1>10K+</h1>
-      <p>Businesses</p>
+    <!-- Products dropdown -->
+    <div class="nav-item dropdown" id="productBtn">
+      <span>Products</span>
+      <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      <div class="dropdown-menu" id="productMenu">
+        <a href="#" class="drop-item">
+          <div class="drop-icon"></div>
+          <div>
+            <strong>PayCliq Mart</strong>
+            <span>Sell anywhere, get paid instantly</span>
+          </div>
+        </a>
+        <a href="#" class="drop-item">
+          <div class="drop-icon"></div>
+          <div>
+            <strong>PayCliq Pro</strong>
+            <span>Advanced tools for growing businesses</span>
+          </div>
+        </a>
+        <a href="#" class="drop-item">
+          <div class="drop-icon"></div>
+          <div>
+            <strong>Invoicing</strong>
+            <span>Create and send professional invoices</span>
+          </div>
+        </a>
+        <a href="#" class="drop-item">
+          <div class="drop-icon"></div>
+          <div>
+            <strong>Book Keeping</strong>
+            <span>Track every naira, automatically</span>
+          </div>
+        </a>
+      </div>
     </div>
 
-    <div class="stat">
-      <h1>$2M+</h1>
-      <p>Transactions</p>
-    </div>
-
-    <div class="stat">
-      <h1>99%</h1>
-      <p>Uptime</p>
-    </div>
+    <a href="#" class="nav-link">Company</a>
+    <a href="#" class="nav-link">Login</a>
+    <a href="#" class="cta-nav">Register your business →</a>
 
   </div>
 
-  <div class="cta">
-    <h2>Start building your business today</h2>
-    <button>Open Account</button>
+</nav>
+
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+
+  <div class="hero-text">
+
+    <div class="hero-tag">
+      <span class="tag-dot"></span>
+      Built for Nigerian businesses
+    </div>
+
+    <h1 class="hero-h1">
+      Accept payments<br>
+      <span class="word-row">
+        <span class="word-static">that feel&nbsp;</span>
+        <span class="word-track-wrap">
+          <span class="word-track" id="wordTrack">
+            <span class="word">reliable</span>
+            <span class="word">intelligent</span>
+            <span class="word">instant</span>
+            <span class="word">seamless</span>
+          </span>
+        </span>
+      </span>
+    </h1>
+
+    <p class="hero-sub">
+      Reliable infrastructure. Real-time settlements.<br>
+      Payments that work every single time.
+    </p>
+
+    <div class="input-group">
+      <input type="email" placeholder="your@business.com">
+      <button type="button">Get started →</button>
+    </div>
+    <p class="form-note">No credit card needed · Setup in 24 hours</p>
+
   </div>
 
-  <div class="footer">
-    <p>© 2026 PayCliq</p>
+  <div class="hero-image">
+    <div class="pos-wrap" id="posWrap">
+
+      <div class="pos-glow"></div>
+      <img src="pos.png" class="pos" id="posImg" alt="PayCliq POS Terminal">
+
+      <!-- Badge 1 — top left -->
+      <div class="badge badge-tl">
+        <span class="badge-icon">⚡</span>
+        <span>Instant settlement</span>
+      </div>
+
+      <!-- Badge 2 — bottom right -->
+      <div class="badge badge-br">
+        <span class="badge-green-dot"></span>
+        <span>Transaction approved</span>
+      </div>
+
+    </div>
   </div>
 
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FEATURES
+     Each block slides in from alternating
+     sides as you scroll
+══════════════════════════════════════ -->
+<section class="features">
+
+  <div class="features-intro">
+    <p class="section-tag">What we do</p>
+    <h2>Infrastructure that handles<br>the hard parts for you</h2>
+  </div>
+
+  <!-- ── Feature 1: Real-time processing ── -->
+  <!-- Slides in from LEFT -->
+  <div class="feature-block slide-left" id="feat1">
+    <div class="feat-visual">
+      <canvas id="flowCanvas" width="400" height="240"></canvas>
+    </div>
+    <div class="feat-text">
+      <span class="feat-num">01</span>
+      <h3>Real-time payment processing</h3>
+      <p>
+        Every transaction — card, NFC, QR — moves through our network the moment your customer pays.
+        Watch the money travel from customer all the way to your bank in real time.
+        No overnight batches. No manual reconciliation.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Feature 2: Fraud intelligence ── -->
+  <!-- Slides in from RIGHT -->
+  <div class="feature-block slide-right" id="feat2">
+    <div class="feat-text">
+      <span class="feat-num">02</span>
+      <h3>Bank-grade fraud intelligence</h3>
+      <p>
+        Our adaptive risk engine analyses every transaction in under 80ms.
+        Unusual patterns are flagged instantly. Genuine payments go through without friction —
+        every single time.
+      </p>
+    </div>
+    <div class="feat-visual">
+      <div class="shield-scene">
+        <div class="s-ring s-ring-3"></div>
+        <div class="s-ring s-ring-2"></div>
+        <div class="s-ring s-ring-1"></div>
+        <div class="shield-body">
+          <svg viewBox="0 0 60 72" fill="none" width="52">
+            <path d="M30 3L5 15v21c0 16 10.5 30.5 25 34 14.5-3.5 25-18 25-34V15L30 3z"
+                  stroke="#ff7a00" stroke-width="2" fill="rgba(255,122,0,0.1)"/>
+            <path d="M20 36l7 7 13-14" stroke="#ff7a00" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <!-- Orbiting dots injected by JS -->
+        <div class="shield-orbit" id="shieldOrbit"></div>
+        <!-- Scan line -->
+        <div class="shield-scan"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Feature 3: Settlement ── -->
+  <!-- Slides in from LEFT -->
+ <div class="feature-block slide-left" id="feat3">
+    <div class="feat-visual">
+      <div class="settle-scene" id="settleScene">
+   <div class="settle-bars" id="settleBars">
+          <div class="s-bar-col"><div class="s-bar" data-h="55"></div><span>Mon</span></div>
+  <div class="s-bar-col"><div class="s-bar" data-h="71"></div><span>Tue</span></div>
+          <div class="s-bar-col"><div class="s-bar" data-h="60"></div><span>Wed</span></div>
+       <div class="s-bar-col"><div class="s-bar" data-h="86"></div><span>Thu</span></div>
+      <div class="s-bar-col"><div class="s-bar" data-h="93"></div><span>Fri</span></div>
+          <div class="s-bar-col"><div class="s-bar" data-h="74"></div><span>Sat</span></div>
+          <div class="s-bar-col"><div class="s-bar" data-h="63"></div><span>Sun</span></div>
+      </div>
+    <p class="settle-label">Settlement activity — last 7 days</p>
+        <!-- Animated checkmark that appears after bars grow -->
+    <div class="settle-check" id="settleCheck">
+          <svg viewBox="0 0 40 40" fill="none" width="40">
+            <circle cx="20" cy="20" r="18" stroke="#ff7a00" stroke-width="2"/>
+     <path class="check-path" d="M12 20l6 6 10-11" stroke="#ff7a00" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      <span>All funds settled</span>
+    </div>
+      </div>
+   </div>
+    <div class="feat-text">
+      <span class="feat-num">03</span>
+      <h3>Automated reconciliation &amp; settlement</h3>
+      <p>
+        Funds move to your bank account daily — or on demand — with clean records attached.
+        You always know exactly what settled, when, and why. Your accounts team will thank you.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="partners">
+  <p class="section-tag light">Trusted network</p>
+  <h2>Backed by banks your business already trusts</h2>
+
+  <div class="partner-row">
+    <div class="partner-card">
+      <span class="p-name">ZENITH</span>
+      <span class="p-sub">Bank</span>
+    </div>
+    <div class="partner-card">
+      <span class="p-name">STERLING</span>
+      <span class="p-sub">Bank</span>
+    </div>
+    <div class="partner-card">
+      <span class="p-name">WEMA</span>
+      <span class="p-sub">Bank</span>
+    </div>
+    <div class="partner-card">
+      <span class="p-name">PHLEX</span>
+      <span class="p-sub">Payment Limited</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-section">
+
+  <div class="cta-text">
+    <p class="section-tag">Get started today</p>
+    <h2>Your business deserves<br>faster <em>money</em></h2>
+    <p>Join businesses across Nigeria accepting payments with confidence. Get your first terminal set up in 24 hours.</p>
+
+    <ul class="cta-perks">
+      <li><span class="perk-dot"></span>Free hardware, first month</li>
+      <li><span class="perk-dot"></span>Dedicated onboarding support</li>
+      <li><span class="perk-dot"></span>No setup fees</li>
+    </ul>
+  </div>
+
+  <div class="cta-form-wrap">
+    <div class="cta-form">
+      <label>Full name</label>
+      <input type="text" placeholder="Chidi Okonkwo">
+
+      <label>Business email</label>
+      <input type="email" placeholder="chidi@yourbusiness.com">
+
+      <label>Business type</label>
+      <select>
+        <option value="">Select one...</option>
+        <option>Retail store</option>
+        <option>Restaurant / Food</option>
+        <option>E-commerce</option>
+        <option>Healthcare</option>
+        <option>Logistics</option>
+        <option>Other</option>
+      </select>
+
+      <button type="button" id="ctaBtn">
+        <span id="ctaBtnText">Register your business →</span>
+      </button>
+    </div>
+  </div>
+
+</section>
+
+
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+    <h1>PayCliq</h1>
+      <p>Payment infrastructure for<br>African businesses.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="#">POS Terminal</a>
+      <a href="#">Dashboard</a>
+      <a href="#">Settlement</a>
+      <a href="#">Analytics</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Careers</a>
+      <a href="#">Blog</a>
+      <a href="#">Press</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Security</a>
+    </div>
+
+  </div>
+
+  <p class="copy">© 2026 PayCliq. All rights reserved. · Licensed by CBN</p>
+
+</footer>
+
+<script src="mock up.js"></script>
 </body>
 </html>
