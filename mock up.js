@@ -38,9 +38,8 @@ productMenu.addEventListener('click', e => e.stopPropagation());
   setInterval(() => {
     current++;
 
-    
-    track.style.transform = `translateY(-${current * (100 / total)}%)`;
-
+  const wordHeight = track.children[0].offsetHeight;
+track.style.transform = `translateY(-${current * wordHeight}px)`;
    
     if (current === total) {
       setTimeout(() => {
@@ -238,7 +237,7 @@ productMenu.addEventListener('click', e => e.stopPropagation());
     const bars = scene.querySelectorAll('.s-bar');
 
     bars.forEach((bar, idx) => {
-      const targetH = bar.getAttribute('data-h'); // e.g. "72"
+      const targetH = bar.getAttribute('data-h'); 
       // Stagger each bar by 80ms
       setTimeout(() => {
         bar.style.height = targetH + '%';
