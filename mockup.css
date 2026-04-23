@@ -377,6 +377,7 @@ input, select { font-family: inherit; }
   text-transform: uppercase;
   color: #ff7a00;
   margin-bottom: 12px;
+  font-size: 19px;
 }
 .section-tag.light { color: rgba(255,255,255,0.55); }
 /* ── The row that holds all 3 cards ── */
@@ -394,7 +395,7 @@ input, select { font-family: inherit; }
   align-items: center;
   gap: 0;
   padding: 0;
-  background: white;
+  background: #2d0f2f;
   border-radius: 20px;
   border: 1px solid rgba(45,15,47,0.07);
   box-shadow: 0 4px 24px rgba(45,15,47,0.05);
@@ -420,7 +421,7 @@ input, select { font-family: inherit; }
 
 .feat-visual {
   width: 100%;
-  height: 240px;
+  height: 275px;
   background: #f7f5fa;
   border-radius: 0;
   display: flex;
@@ -428,6 +429,7 @@ input, select { font-family: inherit; }
   justify-content: center;
   overflow: hidden;
   flex-shrink: 0;
+  padding: 20px;
 }
 
 .feat-text {
@@ -446,18 +448,19 @@ input, select { font-family: inherit; }
 }
 
 .feat-text h3 {
-  font-size: 1.05rem;
+  font-size: 1.55rem;
   font-weight: 800;
-  color: #2d0f2f;
+  color: #ffffff;
   line-height: 1.22;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .feat-text p {
-  font-size: 0.84rem;
-  line-height: 1.65;
-  color: #6b4070;
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: #ffffff;
 }
+
 #flowCanvas { display: block; }
 
 .shield-scene {
