@@ -82,17 +82,17 @@ track.style.transform = `translateY(-${current * wordHeight}px)`;
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  const W   = 400;
-  const H   = 240;
+  const W   = 300;
+  const H   = 300;
   canvas.width  = W;
   canvas.height = H;
 
 
-  const nodes = [
-    { x: 44,  y: 120, label: 'Customer' },
-    { x: 152, y: 72,  label: 'POS'      },
-    { x: 268, y: 154, label: 'Gateway'  },
-    { x: 368, y: 88,  label: 'Bank'     },
+ const nodes = [
+    { x: 36,  y: 180, label: 'Customer' },
+    { x: 110, y: 100, label: 'POS'      },
+    { x: 190, y: 190, label: 'Gateway'  },
+    { x: 264, y: 110, label: 'Bank'     },
   ];
 
  
@@ -244,7 +244,7 @@ track.style.transform = `translateY(-${current * wordHeight}px)`;
       }, idx * 80);
     });
 
-    // After bars finish, show the checkmark
+ 
     const check = document.getElementById('settleCheck');
     if (check) {
       setTimeout(() => {

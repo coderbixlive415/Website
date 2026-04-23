@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thumbnail Mockups - Worst Jobs In History</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 20px; font-family: 'Georgia', serif; }
+  h2 { color: #fff; font-size: 18px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.6; }
+
+  /* ============ THUMBNAIL BASE ============ */
+  .thumb {
+    width: 1280px;
+    height: 720px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+  }
+
+  .panel {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* Divider lines between panels */
+  .panel:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #000;
+    z-index: 10;
+  }
+
+  /* Logo area top of each panel */
+  .logo {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Child image placeholder */
+  .child-img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 82%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .child-placeholder {
+    width: 75%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  /* Gradient overlay bottom of each panel */
+  .gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    z-index: 3;
+  }
+
+  /* ============ THUMBNAIL 1 ============ */
+  /* Panel 1: Army Green / US Army */
+  .t1-p1 { background: #1B3A1B; }
+  .t1-p1 .child-placeholder { background: linear-gradient(180deg, #2d5a2d 0%, #1a3a1a 100%); color: #8fbc8f; }
+  .t1-p1 .gradient-overlay { background: linear-gradient(to top, #0d1f0d, transparent); }
+
+  /* Panel 2: Deep Black / GM */
+  .t1-p2 { background: #000; }
+  .t1-p2 .child-placeholder { background: linear-gradient(180deg, #1a1a1a 0%, #000 100%); color: #555; }
+  .t1-p2 .gradient-overlay { background: linear-gradient(to top, #000, transparent); }
+
+  /* Panel 3: Pure White / Zara */
+  .t1-p3 { background: #fff; }
+  .t1-p3 .child-placeholder { background: linear-gradient(180deg, #e8e8e8 0%, #d0d0d0 100%); color: #999; }
+  .t1-p3 .gradient-overlay { background: linear-gradient(to top, #e0e0e0, transparent); }
+
+  /* US Army Logo SVG style */
+  .army-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid gold;
+    background: radial-gradient(circle, #2d5a1b, #1a3a0d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: gold;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255,215,0,0.4);
+  }
+
+  .army-star {
+    font-size: 28px;
+    line-height: 1;
+    color: gold;
+  }
+
+  /* GM Logo */
+  .gm-logo {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .gm-text {
+    font-size: 72px;
+    font-weight: 900;
+    color: #0063CE;
+    font-family: 'Georgia', serif;
+    letter-spacing: -2px;
+    text-shadow: 0 0 30px rgba(0,99,206,0.6);
+    line-height: 1;
+  }
+
+  .gm-bar {
+    width: 80px;
+    height: 5px;
+    background: #0063CE;
+    box-shadow: 0 0 15px rgba(0,99,206,0.8);
+  }
+
+  /* Zara Logo */
+  .zara-text {
+    font-size: 64px;
+    font-weight: 900;
+    color: #000;
+    letter-spacing: 8px;
+    font-family: 'Georgia', serif;
+    line-height: 1;
+  }
+
+  /* Image drop zone labels */
+  .drop-label {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .img-frame {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 78%;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .img-box {
+    width: 85%;
+    height: 95%;
+    border: 3px dashed rgba(255,255,255,0.2);
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .img-box-dark {
+    border-color: rgba(0,0,0,0.15);
+  }
+
+  .img-icon { font-size: 36px; opacity: 0.3; }
+
+  .img-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.4;
+    text-align: center;
+    padding: 0 20px;
+    line-height: 1.8;
+  }
+
+  /* ============ THUMBNAIL 2 ============ */
+  /* Dark cinematic - red / black / dark blue */
+  .t2-p1 { background: #8B0000; }
+  .t2-p2 { background: #0a0a0a; }
+  .t2-p3 { background: #003366; }
+
+  .t2-p1 .img-box { border-color: rgba(255,100,100,0.3); }
+  .t2-p1 .img-label { color: #ff8888; }
+  .t2-p2 .img-label { color: #888; }
+  .t2-p3 .img-box { border-color: rgba(100,150,255,0.3); }
+  .t2-p3 .img-label { color: #88aaff; }
+
+  .t2-p1 .gradient-overlay { background: linear-gradient(to top, #4a0000, transparent); }
+  .t2-p2 .gradient-overlay { background: linear-gradient(to top, #000, transparent); }
+  .t2-p3 .gradient-overlay { background: linear-gradient(to top, #001a33, transparent); }
+
+  /* Rolex logo for t2 */
+  .rolex-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .rolex-crown { font-size: 32px; color: #FFD700; filter: drop-shadow(0 0 8px rgba(255,215,0,0.8)); }
+  .rolex-text { font-size: 28px; font-weight: 900; color: #FFD700; letter-spacing: 6px; font-family: Georgia; text-shadow: 0 0 20px rgba(255,215,0,0.6); }
+
+  /* Nike swoosh for t2 p3 */
+  .nike-logo {
+    color: white;
+    font-size: 80px;
+    font-style: italic;
+    font-weight: 900;
+    font-family: Georgia;
+    transform: skewX(-15deg);
+    text-shadow: 0 0 20px rgba(255,255,255,0.4);
+    line-height: 1;
+  }
+
+  /* ============ THUMBNAIL 3 ============ */
+  /* High contrast: yellow / dark / white with red accent */
+  .t3-p1 { background: #1a1a00; }
+  .t3-p2 { background: #1a0000; }
+  .t3-p3 { background: #f5f5f5; }
+
+  .t3-p1 .gradient-overlay { background: linear-gradient(to top, #0d0d00, transparent); }
+  .t3-p2 .gradient-overlay { background: linear-gradient(to top, #0d0000, transparent); }
+  .t3-p3 .gradient-overlay { background: linear-gradient(to top, #ddd, transparent); }
+
+  .t3-p1 .img-label { color: #aaaa44; }
+  .t3-p2 .img-label { color: #aa4444; }
+  .t3-p3 .img-box { border-color: rgba(0,0,0,0.15); }
+  .t3-p3 .img-label { color: #555; }
+
+  /* GM blue for t3 */
+  .gm-logo-v2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+  .gm-text-v2 {
+    font-size: 68px;
+    font-weight: 900;
+    color: #fff;
+    font-family: Georgia;
+    letter-spacing: -2px;
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(255,255,255,0.5);
+  }
+  .gm-bar-v2 {
+    width: 75px;
+    height: 4px;
+    background: #fff;
+  }
+
+  /* Zara black for t3 */
+  .zara-text-v2 {
+    font-size: 56px;
+    font-weight: 900;
+    color: #111;
+    letter-spacing: 8px;
+    font-family: Georgia;
+  }
+
+  /* US Army minimal for t3 */
+  .army-logo-v2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .army-star-v2 { font-size: 50px; color: #FFD700; line-height: 1; filter: drop-shadow(0 0 12px rgba(255,215,0,0.8)); }
+  .army-text-v2 { font-size: 14px; font-weight: 900; color: #FFD700; letter-spacing: 4px; text-transform: uppercase; }
+
+  /* Thumbnail labels */
+  .thumb-label {
+    color: #666;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    align-self: flex-start;
+  }
+
+  .thumb-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 1280px;
+  }
+
+  /* Scale down for display */
+  .scale-wrapper {
+    transform: scale(0.75);
+    transform-origin: top left;
+    width: 1280px;
+    height: 720px;
+  }
+
+  .outer {
+    width: 960px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .thumb-set {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .version-tag {
+    color: #444;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 4px 0;
+  }
+
+</style>
+</head>
+<body>
+
+<div style="color:#fff; font-size:24px; font-weight:bold; letter-spacing:3px; text-transform:uppercase; margin-bottom:10px;">Thumbnail Mockups</div>
+<div style="color:#555; font-size:13px; letter-spacing:2px; margin-bottom:30px;">WHAT IS THE WORST JOB IN HISTORY — 1280×720px</div>
+
+<!-- ======= THUMBNAIL VERSION 1 ======= -->
+<div style="display:flex;flex-direction:column;gap:8px;width:100%;align-items:center;">
+<div class="version-tag" style="color:#666;">VERSION 01 — ARMY GREEN / COAL BLACK / ZARA WHITE</div>
+
+<div class="thumb">
+
+  <!-- PANEL 1: Vietnam Soldier / US Army -->
+  <div class="panel t1-p1">
+    <div class="logo">
+      <div class="army-logo">
+        <div class="army-star">★</div>
+        <div style="font-size:7px;letter-spacing:2px;color:gold;font-weight:900;">UNITED STATES</div>
+        <div style="font-size:9px;letter-spacing:3px;color:gold;font-weight:900;">ARMY</div>
+      </div>
+    </div>
+    <div class="img-frame">
+      <div class="img-box">
+        <div class="img-icon">🪖</div>
+        <div class="img-label" style="color:#8fbc8f;">DROP YOUR<br>VIETNAM SOLDIER<br>PHOTO HERE<br><br>Young scared face<br>Full military gear</div>
+      </div>
+    </div>
+    <div class="gradient-overlay"></div>
+  </div>
+
+  <!-- PANEL 2: Coal Miner / GM -->
+  <div class="panel t1-p2">
+    <div class="logo" style="top:24px;">
+      <div class="gm-logo">
+        <div class="gm-text">GM</div>
+        <div class="gm-bar"></div>
+      </div>
+    </div>
+    <div class="img-frame">
+      <div class="img-box">
+        <div class="img-icon" style="color:#555;">⛏️</div>
+        <div class="img-label">DROP YOUR<br>COAL MINER BOY<br>PHOTO HERE<br><br>Lewis Hine photo<br>Black & white face</div>
+      </div>
+    </div>
+    <div class="gradient-overlay"></div>
+  </div>
+
+  <!-- PANEL 3: Garment Worker / Zara -->
+  <div class="panel t1-p3">
+    <div class="logo" style="top:32px;">
+      <div class="zara-text">ZARA</div>
+    </div>
+    <div class="img-frame">
+      <div class="img-box img-box-dark">
+        <div class="img-icon" style="color:#bbb;">🧵</div>
+        <div class="img-label" style="color:#999;">DROP YOUR<br>CHILD GARMENT<br>WORKER PHOTO HERE<br><br>Sewing machine<br>Direct eye contact</div>
+      </div>
+    </div>
+    <div class="gradient-overlay"></div>
+  </div>
+
+</div>
+</div>
+
+<!-- ======= THUMBNAIL VERSION 2 ======= -->
+<div style="display:flex;flex-direction:column;gap:8px;width:100%;align-items:center;margin-top:20px;">
+<div class="version-tag" style="color:#666;">VERSION 02 — BLOOD RED / PITCH BLACK / NAVY BLUE</div>
+
+<div class="thumb">
+
+  <!-- PANEL 1: Radium Girl / Rolex -->
+  <div class="panel t2-p1">
+    <div class="logo">
+      <div class="rolex-logo">
+        <div class="rolex-crown">♛</div>
+        <div class="rolex-text">ROLEX</div>
+      </div>
+    </div>
+    <div class="img-frame">
+      <div class="img-box">
+        <div class="img-icon" style="color:#ff6666;">☢️</div>
+        <div class="img-label" style="color:#ff8888;">DROP YOUR<br>RADIUM GIRL / SICK<br>YOUNG GIRL PHOTO HERE<br><br>Pale face<br>Historical 1920s</div>
+      </div>
+    </div>
+    <div class="gradient-overlay"></div>
+  </div>
+
+  <!-- PANEL 2: Coal Miner / GM -->
+  <div class="panel t2-p2">
+    <div class="logo" style="top:24px;">
+      <div class="gm-logo">
+        <div class="gm-text">GM</div>
+        <div class="gm-bar"></div>
+      </div>
+    </div>
+    <div class="img-frame">
+      <div class="img-box">
+        <div class="img-icon" style="color:#444;">⛏️</div>
+        <div class="img-label">DROP YOUR<br>COAL MINER BOY<br>PHOTO HERE<br><br>Black dust face<br>Direct stare</div>
+      </div>
+    </div>
+    <div class="gradient-overlay"></div>
+  </div>
+
+  <!-- PANEL 3: Garment Worker / Zara -->
+  <div class="panel t2-p3">
+    <div class="logo" style="top:32px;">
+      <div class="zara-text" style="color:#fff;text-shadow:0 0 20px rgba(255,255,255,0.3);">ZARA</div>
+    </div>
+    <div class="img-frame">
+      <div class="img-box">
+        <div class="img-icon" style="color:#88aaff;">🧵</div>
+        <div class="img-label" style="color:#88aaff;">DROP YOUR<br>CHILD GARMENT<br>WORKER PHOTO HERE<br><br>Factory setting<br>Tired face</div>
+      </div>
+    </div>
+    <div class="gradient-overlay"></div>
+  </div>
+
+</div>
+</div>
+
+<!-- ======= THUMBNAIL VERSION 3 ======= -->
+<div style="display:flex;flex-direction:column;gap:8px;width:100%;align-items:center;margin-top:20px;">
+<div class="version-tag" style="color:#666;">VERSION 03 — DARK OLIVE / DARK RED / CLEAN WHITE</div>
+
+<div class="thumb">
+
+  <!-- PANEL 1: Vietnam Soldier / US Army star -->
+  <div class="panel t3-p1">
+    <div class="logo">
+      <div class="army-logo-v2">
+        <div class="army-star-v2">★</div>
+        <div class="army-text-v2">U.S. ARMY</div>
+      </div>
+    </div>
+    <div class="img-frame">
+      <div class="img-box">
+        <div class="img-icon" style="color:#aaaa44;">🪖</div>
+        <div class="img-label" style="color:#aaaa44;">DROP YOUR<br>YOUNG VIETNAM<br>SOLDIER PHOTO HERE<br><br>Close up face<br>Fear in eyes</div>
+      </div>
+    </div>
+    <div class="gradient-overlay"></div>
+  </div>
+
+  <!-- PANEL 2: Coal Miner / GM white -->
+  <div class="panel t3-p2">
+    <div class="logo" style="top:24px;">
+      <div class="gm-logo-v2">
+        <div class="gm-text-v2">GM</div>
+        <div class="gm-bar-v2"></div>
+      </div>
+    </div>
+    <div class="img-frame">
+      <div class="img-box">
+        <div class="img-icon" style="color:#aa4444;">⛏️</div>
+        <div class="img-label" style="color:#aa4444;">DROP YOUR<br>COAL MINER BOY<br>PHOTO HERE<br><br>Lewis Hine<br>Dust covered face</div>
+      </div>
+    </div>
+    <div class="gradient-overlay"></div>
+  </div>
+
+  <!-- PANEL 3: Garment Worker / Zara black -->
+  <div class="panel t3-p3">
+    <div class="logo" style="top:32px;">
+      <div class="zara-text-v2">ZARA</div>
+    </div>
+    <div class="img-frame">
+      <div class="img-box img-box-dark">
+        <div class="img-icon" style="color:#bbb;">🧵</div>
+        <div class="img-label" style="color:#555;">DROP YOUR<br>CHILD GARMENT<br>WORKER PHOTO HERE<br><br>Sewing machine<br>Sad direct stare</div>
+      </div>
+    </div>
+    <div class="gradient-overlay"></div>
+  </div>
+
+</div>
+</div>
+
+<!-- Instructions -->
+<div style="margin-top:40px;padding:30px;background:#1a1a1a;border-radius:12px;max-width:900px;width:100%;">
+  <div style="color:#fff;font-size:16px;font-weight:bold;letter-spacing:2px;margin-bottom:16px;">HOW TO USE IN CANVA</div>
+  <div style="color:#666;font-size:13px;line-height:2.2;letter-spacing:0.5px;">
+    1. Open Canva → New design → Custom size → <strong style="color:#aaa;">1280 x 720px</strong><br>
+    2. Divide canvas into 3 equal sections using rectangle shapes (426px each)<br>
+    3. Use the background colors shown in each version above<br>
+    4. Drop your real photos into each panel and use <strong style="color:#aaa;">Background Remover</strong> to cut out the subject<br>
+    5. Add logos as PNG transparent files on top<br>
+    6. Add a thin 4px black line between each panel<br>
+    7. Make sure each child's face is centered and fills most of the panel height<br>
+    8. Logo should sit at the top center of each panel — big enough to read at mobile size
+  </div>
+</div>
+
+</body>
+</html>

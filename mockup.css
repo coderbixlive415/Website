@@ -42,7 +42,7 @@ input, select { font-family: inherit; }
   gap: 8px;
 }
 
-/* Regular nav links */
+
 .nav-link {
   font-size: 0.9rem;
   font-weight: 500;
@@ -379,48 +379,61 @@ input, select { font-family: inherit; }
   margin-bottom: 12px;
 }
 .section-tag.light { color: rgba(255,255,255,0.55); }
-
-.feature-block {
+/* ── The row that holds all 3 cards ── */
+.features-row {
   display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* ── Each card: animation on top, text below ── */
+.feature-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 64px;
-  margin-bottom: 28px;
-  padding: 52px 56px;
+  gap: 0;
+  padding: 0;
   background: white;
   border-radius: 20px;
   border: 1px solid rgba(45,15,47,0.07);
   box-shadow: 0 4px 24px rgba(45,15,47,0.05);
   overflow: hidden;
-
-
   opacity: 0;
   transition: opacity 0.72s ease, transform 0.72s ease;
 }
 
-.slide-left  { transform: translateX(-70px); }
-
-.slide-right { transform: translateX(70px); }
-
+.slide-left  { transform: translateY(50px); }
+.slide-right { transform: translateY(50px); }
 
 .feature-block.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
-#feat2 { flex-direction: row-reverse; }
+/* Stagger the three cards slightly */
+.feature-block:nth-child(2) { transition-delay: 0.12s; }
+.feature-block:nth-child(3) { transition-delay: 0.24s; }
+
+/* No more row-reverse — all cards are vertical now */
+#feat2 { flex-direction: column; }
 
 .feat-visual {
-  flex: 0 0 400px;
-  height: 260px;
+  width: 100%;
+  height: 240px;
   background: #f7f5fa;
-  border-radius: 16px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
-.feat-text { flex: 1; }
+.feat-text {
+  padding: 28px 28px 32px;
+  width: 100%;
+}
 
 .feat-num {
   display: block;
@@ -433,19 +446,18 @@ input, select { font-family: inherit; }
 }
 
 .feat-text h3 {
-  font-size: 1.55rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: #2d0f2f;
   line-height: 1.22;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .feat-text p {
-  font-size: 0.97rem;
-  line-height: 1.8;
+  font-size: 0.84rem;
+  line-height: 1.65;
   color: #6b4070;
 }
-
 #flowCanvas { display: block; }
 
 .shield-scene {
@@ -861,6 +873,21 @@ footer {
 
   .footer-grid { flex-wrap: wrap; gap: 36px; }
   .partners { padding: 60px 24px; }
+
+   .features-row {
+    flex-direction: column;
+  }
+ .feat-visual {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #f7f5fa;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
 }
 .bank-logo {
   height: 48px;
@@ -873,4 +900,146 @@ footer {
 .partner-card:hover .bank-logo {
   transform: scale(1.08);
   filter: drop-shadow(0 0 12px rgba(255, 122, 0, 0.6));
+}
+
+.nav {
+  display: none;
+}
+
+.nav-wrap {
+  position: sticky;
+  top: 20px;
+  z-index: 300;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.nav-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2d0f2f;
+  padding: 10px 18px;
+  border-radius: 999px;
+  width: 100%;
+  max-width: 1100px;
+  box-shadow: 0 8px 30px rgba(45,15,47,0.18);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-box {
+  width: 38px;
+  height: 38px;
+  background: #ff7a00;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-box img {
+  width: 20px;
+  height: 20px;
+}
+
+.logo-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.08em;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-link,
+.nav-item {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-item:hover {
+  color: white;
+}
+
+.chevron {
+  color: rgba(255,255,255,0.5);
+}
+
+.nav-item.open .chevron {
+  transform: rotate(180deg);
+}
+
+.cta-outline {
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.cta-outline:hover {
+  background: #ff7a00;
+  border-color: #ff7a00;
+  color: white;
+}
+.feature-row {
+  margin-top: -40px;
+  margin-bottom: 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.feature-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  animation: scrollX 20s linear infinite;
+}
+
+.feature-pill {
+  border: 1.5px solid rgba(45,15,47,0.25);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2d0f2f;
+  white-space: nowrap;
+  background: #fff;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+
+.feature-pill:hover {
+  background: #ff7a00;
+  color: #fff;
+  border-color: #ff7a00;
+  opacity: 1;
+}
+
+@keyframes scrollX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+
 }
