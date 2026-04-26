@@ -1204,3 +1204,16 @@ footer {
   .mart-pos-section { order: -1; }
   .mart-features, .mart-challenge { padding: 70px 24px; }
 }
+/* Fix for PayCliq logo alignment in header(paycliq-mart) */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
