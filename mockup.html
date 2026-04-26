@@ -6,36 +6,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="mockup.css">
 </head>
-
 <body>
+
+<!-- Navigation -->
 <nav class="nav-wrap">
-
   <div class="nav-pill">
-
     <div class="nav-left">
       <div class="logo-box">
         <img src="Screenshot_23-4-2026_12464_paycliq.africa-removebg-preview.png" alt="PayCliq Q">
       </div>
       <span class="logo-text">PAYCLIQ</span>
     </div>
-
     <div class="nav-center">
-
       <div class="nav-item dropdown" id="productBtn">
         <span>Products</span>
         <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M6 9l6 6 6-6"/>
         </svg>
-
         <div class="dropdown-menu" id="productMenu">
-          <a href="#" class="drop-item">
+          <!-- UPDATED: PayCliq Mart now links to its own page -->
+          <a href="paycliq-mart.html" class="drop-item">
             <div class="drop-icon"></div>
             <div>
               <strong>PayCliq Mart</strong>
               <span>Sell anywhere, get paid instantly</span>
             </div>
           </a>
-
           <a href="#" class="drop-item">
             <div class="drop-icon"></div>
             <div>
@@ -43,7 +39,6 @@
               <span>Advanced tools for growing businesses</span>
             </div>
           </a>
-
           <a href="#" class="drop-item">
             <div class="drop-icon"></div>
             <div>
@@ -51,7 +46,6 @@
               <span>Create and send professional invoices</span>
             </div>
           </a>
-
           <a href="#" class="drop-item">
             <div class="drop-icon"></div>
             <div>
@@ -61,30 +55,22 @@
           </a>
         </div>
       </div>
-
       <a href="#" class="nav-link">Company</a>
       <a href="#" class="nav-link">Login</a>
-
     </div>
-
     <div class="nav-right">
       <a href="#" class="cta-outline">Register your business →</a>
     </div>
-
   </div>
-
 </nav>
+
+<!-- Hero Section -->
 <section class="hero">
-
-  
-
   <div class="hero-text">
-
     <div class="hero-tag">
       <span class="tag-dot"></span>
       Built for Nigerian businesses
     </div>
-
     <h1 class="hero-h1">
       Accept payments<br>
       <span class="word-row">
@@ -99,181 +85,142 @@
         </span>
       </span>
     </h1>
-
     <p class="hero-sub">
       Reliable infrastructure. Real-time settlements.<br>
       Payments that work every single time.
     </p>
-
     <div class="input-group">
       <input type="email" placeholder="your@business.com">
       <button type="button">Get started →</button>
     </div>
     <p class="form-note">No credit card needed · Setup in 24 hours</p>
-
   </div>
 
   <div class="hero-image">
     <div class="pos-wrap" id="posWrap">
-
       <div class="pos-glow"></div>
       <img src="pos.png" class="pos" id="posImg" alt="PayCliq POS Terminal">
-
-      <!-- Badge 1 — top left -->
+      <!-- Badge 1 -->
       <div class="badge badge-tl">
         <span class="badge-icon">⚡</span>
         <span>Instant settlement</span>
       </div>
-
-      <!-- Badge 2 — bottom right -->
+      <!-- Badge 2 -->
       <div class="badge badge-br">
         <span class="badge-green-dot"></span>
         <span>Transaction approved</span>
       </div>
-
     </div>
   </div>
-
 </section>
 
-
+<!-- Features Section -->
 <section class="features">
-<div class="feature-row">
-
-  <div class="feature-track">
-    <span class="feature-pill">Instant payment confirmation</span>
-    <span class="feature-pill">Invoice & receipt generation</span>
-    <span class="feature-pill">Manage inventory</span>
-    <span class="feature-pill">Flexible settlement options</span>
-    <span class="feature-pill">Automated reconciliation</span>
-    <span class="feature-pill">Advanced analytics</span>
-
-    <span class="feature-pill">Instant payment confirmation</span>
-    <span class="feature-pill">Invoice & receipt generation</span>
-    <span class="feature-pill">Manage inventory</span>
-    <span class="feature-pill">Flexible settlement options</span>
-    <span class="feature-pill">Automated reconciliation</span>
-    <span class="feature-pill">Advanced analytics</span>
+  <div class="feature-row">
+    <div class="feature-track">
+      <span class="feature-pill">Instant payment confirmation</span>
+      <span class="feature-pill">Invoice & receipt generation</span>
+      <span class="feature-pill">Manage inventory</span>
+      <span class="feature-pill">Flexible settlement options</span>
+      <span class="feature-pill">Automated reconciliation</span>
+      <span class="feature-pill">Advanced analytics</span>
+      <span class="feature-pill">Instant payment confirmation</span>
+      <span class="feature-pill">Invoice & receipt generation</span>
+      <span class="feature-pill">Manage inventory</span>
+      <span class="feature-pill">Flexible settlement options</span>
+      <span class="feature-pill">Automated reconciliation</span>
+      <span class="feature-pill">Advanced analytics</span>
+    </div>
   </div>
-
-</div>
 
   <div class="features-intro">
     <p class="section-tag">What we do</p>
     <h2>Infrastructure that handles<br>the hard parts for you</h2>
   </div>
 
-  <!-- ── Feature 1: Real-time processing ── -->
-  <!-- Slides in from LEFT -->
-
   <div class="features-row">
-  <div class="feature-block slide-left" id="feat1">
-    <div class="feat-visual">
-      <canvas id="flowCanvas" width="300" height="300"></canvas>
+    <div class="feature-block slide-left" id="feat1">
+      <div class="feat-visual">
+        <canvas id="flowCanvas" width="300" height="300"></canvas>
+      </div>
+      <div class="feat-text">
+        <span class="feat-num">01</span>
+        <h3>Real-time payment processing</h3>
+        <p>Every transaction — card, NFC, QR — moves through our network the moment your customer pays.</p>
+      </div>
     </div>
-    <div class="feat-text">
-      <span class="feat-num">01</span>
-      <h3>Real-time payment processing</h3>
-      <p>
-        Every transaction — card, NFC, QR — moves through our network the moment your customer pays.
-        Watch the money travel from customer all the way to your bank in real time.
-        No overnight batches. No manual reconciliation.
-      </p>
-    </div>
-  </div>
 
-  <div class="feature-block slide-right" id="feat2">
-    <div class="feat-text">
-      <span class="feat-num">02</span>
-      <h3>Bank-grade fraud intelligence</h3>
-      <p>
-        Our adaptive risk engine analyses every transaction in under 80ms.
-        Unusual patterns are flagged instantly. Genuine payments go through without friction —
-        every single time.
-      </p>
-    </div>
-    <div class="feat-visual">
-      <div class="shield-scene">
-        <div class="s-ring s-ring-3"></div>
-        <div class="s-ring s-ring-2"></div>
-        <div class="s-ring s-ring-1"></div>
-        <div class="shield-body">
-          <svg viewBox="0 0 60 72" fill="none" width="52">
-            <path d="M30 3L5 15v21c0 16 10.5 30.5 25 34 14.5-3.5 25-18 25-34V15L30 3z"
-                  stroke="#ff7a00" stroke-width="2" fill="rgba(255,122,0,0.1)"/>
-            <path d="M20 36l7 7 13-14" stroke="#ff7a00" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+    <div class="feature-block slide-right" id="feat2">
+      <div class="feat-text">
+        <span class="feat-num">02</span>
+        <h3>Bank-grade fraud intelligence</h3>
+        <p>Our adaptive risk engine analyses every transaction in under 80ms.</p>
+      </div>
+      <div class="feat-visual">
+        <div class="shield-scene">
+          <div class="s-ring s-ring-3"></div>
+          <div class="s-ring s-ring-2"></div>
+          <div class="s-ring s-ring-1"></div>
+          <div class="shield-body">
+            <svg viewBox="0 0 60 72" fill="none" width="52">
+              <path d="M30 3L5 15v21c0 16 10.5 30.5 25 34 14.5-3.5 25-18 25-34V15L30 3z" stroke="#ff7a00" stroke-width="2" fill="rgba(255,122,0,0.1)"/>
+              <path d="M20 36l7 7 13-14" stroke="#ff7a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="shield-orbit" id="shieldOrbit"></div>
+          <div class="shield-scan"></div>
         </div>
-       
-        <div class="shield-orbit" id="shieldOrbit"></div>
-     
-        <div class="shield-scan"></div>
+      </div>
+    </div>
+
+    <div class="feature-block slide-left" id="feat3">
+      <div class="feat-visual">
+        <div class="settle-scene" id="settleScene">
+          <div class="settle-bars" id="settleBars">
+            <div class="s-bar-col"><div class="s-bar" data-h="55"></div><span>Mon</span></div>
+            <div class="s-bar-col"><div class="s-bar" data-h="71"></div><span>Tue</span></div>
+            <div class="s-bar-col"><div class="s-bar" data-h="60"></div><span>Wed</span></div>
+            <div class="s-bar-col"><div class="s-bar" data-h="86"></div><span>Thu</span></div>
+            <div class="s-bar-col"><div class="s-bar" data-h="93"></div><span>Fri</span></div>
+            <div class="s-bar-col"><div class="s-bar" data-h="74"></div><span>Sat</span></div>
+            <div class="s-bar-col"><div class="s-bar" data-h="63"></div><span>Sun</span></div>
+          </div>
+          <p class="settle-label">Settlement activity — last 7 days</p>
+          <div class="settle-check" id="settleCheck">
+            <svg viewBox="0 0 40 40" fill="none" width="40">
+              <circle cx="20" cy="20" r="18" stroke="#ff7a00" stroke-width="2"/>
+              <path class="check-path" d="M12 20l6 6 10-11" stroke="#ff7a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>All funds settled</span>
+          </div>
+        </div>
+      </div>
+      <div class="feat-text">
+        <span class="feat-num">03</span>
+        <h3>Automated reconciliation &amp; settlement</h3>
+        <p>Funds move to your bank account daily — or on demand — with clean records attached.</p>
       </div>
     </div>
   </div>
-
- <div class="feature-block slide-left" id="feat3">
-    <div class="feat-visual">
-      <div class="settle-scene" id="settleScene">
-   <div class="settle-bars" id="settleBars">
-          <div class="s-bar-col"><div class="s-bar" data-h="55"></div><span>Mon</span></div>
-  <div class="s-bar-col"><div class="s-bar" data-h="71"></div><span>Tue</span></div>
-          <div class="s-bar-col"><div class="s-bar" data-h="60"></div><span>Wed</span></div>
-       <div class="s-bar-col"><div class="s-bar" data-h="86"></div><span>Thu</span></div>
-      <div class="s-bar-col"><div class="s-bar" data-h="93"></div><span>Fri</span></div>
-          <div class="s-bar-col"><div class="s-bar" data-h="74"></div><span>Sat</span></div>
-          <div class="s-bar-col"><div class="s-bar" data-h="63"></div><span>Sun</span></div>
-      </div>
-    <p class="settle-label">Settlement activity — last 7 days</p>
-      
-    <div class="settle-check" id="settleCheck">
-          <svg viewBox="0 0 40 40" fill="none" width="40">
-            <circle cx="20" cy="20" r="18" stroke="#ff7a00" stroke-width="2"/>
-     <path class="check-path" d="M12 20l6 6 10-11" stroke="#ff7a00" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-      <span>All funds settled</span>
-    </div>
-      </div>
-   </div>
-    <div class="feat-text">
-      <span class="feat-num">03</span>
-      <h3>Automated reconciliation &amp; settlement</h3>
-      <p>
-        Funds move to your bank account daily — or on demand — with clean records attached.
-        You always know exactly what settled, when, and why. Your accounts team will thank you.
-      </p>
-    </div>
-  </div>
-
-  </div><!-- closes features-row -->
-
 </section>
 
-</section>
-
-
+<!-- Partners -->
 <section class="partners">
   <p class="section-tag light">Trusted network</p>
   <h2>Backed by banks your business already trusts</h2>
-
   <div class="partner-row">
     <div class="partner-card">
       <img src="assets/images/logos/zenith.png" alt="Zenith Bank" class="bank-logo">
       <span class="p-sub">Zenith Bank</span>
     </div>
-    
     <div class="partner-card">
       <img src="assets/images/logos/sterling.jpg" alt="Sterling Bank" class="bank-logo">
       <span class="p-sub">Sterling Bank</span>
     </div>
-    
     <div class="partner-card">
       <img src="assets/images/logos/wema.jpg" alt="Wema Bank" class="bank-logo">
       <span class="p-sub">Wema Bank</span>
     </div>
-    
     <div class="partner-card">
       <img src="assets/images/logos/phlex.jpg" alt="Phlex Payment" class="bank-logo">
       <span class="p-sub">Phlex Payment Limited</span>
@@ -281,29 +228,24 @@
   </div>
 </section>
 
-
+<!-- CTA Section -->
 <section class="cta-section">
-
   <div class="cta-text">
     <p class="section-tag">Get started today</p>
     <h2>Your business deserves<br>faster <em>money</em></h2>
     <p>Join businesses across Nigeria accepting payments with confidence. Get your first terminal set up in 24 hours.</p>
-
     <ul class="cta-perks">
       <li><span class="perk-dot"></span>Free hardware, first month</li>
       <li><span class="perk-dot"></span>Dedicated onboarding support</li>
       <li><span class="perk-dot"></span>No setup fees</li>
     </ul>
   </div>
-
   <div class="cta-form-wrap">
     <div class="cta-form">
       <label>Full name</label>
       <input type="text" placeholder="Chidi Okonkwo">
-
       <label>Business email</label>
       <input type="email" placeholder="chidi@yourbusiness.com">
-
       <label>Business type</label>
       <select>
         <option value="">Select one...</option>
@@ -314,26 +256,20 @@
         <option>Logistics</option>
         <option>Other</option>
       </select>
-
       <button type="button" id="ctaBtn">
         <span id="ctaBtnText">Register your business →</span>
       </button>
     </div>
   </div>
-
 </section>
 
-
-
+<!-- Footer -->
 <footer>
-
   <div class="footer-grid">
-
     <div class="footer-brand">
-    <h1>PayCliq</h1>
+      <h1>PayCliq</h1>
       <p>Payment infrastructure for<br>African businesses.</p>
     </div>
-
     <div class="footer-col">
       <h4>Product</h4>
       <a href="#">POS Terminal</a>
@@ -341,7 +277,6 @@
       <a href="#">Settlement</a>
       <a href="#">Analytics</a>
     </div>
-
     <div class="footer-col">
       <h4>Company</h4>
       <a href="#">About</a>
@@ -349,18 +284,14 @@
       <a href="#">Blog</a>
       <a href="#">Press</a>
     </div>
-
     <div class="footer-col">
       <h4>Legal</h4>
       <a href="#">Privacy</a>
       <a href="#">Terms</a>
       <a href="#">Security</a>
     </div>
-
   </div>
-
   <p class="copy">© 2026 PayCliq. All rights reserved. · Licensed by CBN</p>
-
 </footer>
 
 <script src="mock up.js"></script>

@@ -1046,3 +1046,161 @@ footer {
   }
 
 }
+/* ====================== PAYCLIQ MART PAGE STYLES ====================== */
+
+.mart-hero {
+  padding: 100px 60px 80px;
+  background: white;
+  color: #2d0f2f;
+}
+
+.mart-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mart-text {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.mart-small-header {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ff7a00;
+  margin-bottom: 12px;
+}
+
+.mart-main-heading {
+  font-size: clamp(2.1rem, 4vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #2d0f2f;
+}
+
+.mart-content {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mart-pos-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.mart-description {
+  flex: 1;
+}
+
+.mart-description h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #2d0f2f;
+}
+
+.mart-description p {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: #6b4070;
+  margin-bottom: 32px;
+}
+
+.mart-cta-button {
+  display: inline-block;
+  background: #ff7a00;
+  color: white;
+  padding: 16px 34px;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255,122,0,0.35);
+}
+
+.mart-cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(255,122,0,0.45);
+  background: #e56d00;
+}
+
+/* Feature Boxes with Images */
+.mart-features {
+  padding: 100px 60px;
+  background: #faf9fb;
+}
+
+.mart-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mart-feature-box {
+  background: white;
+  padding: 32px;
+  border-radius: 18px;
+  border: 1px solid rgba(45,15,47,0.08);
+  box-shadow: 0 6px 25px rgba(45,15,47,0.06);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.mart-feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(45,15,47,0.12);
+}
+
+.feature-box-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 24px;
+  border-radius: 12px;
+}
+
+.mart-feature-box h3 {
+  font-size: 1.48rem;
+  font-weight: 700;
+  color: #2d0f2f;
+  margin-bottom: 16px;
+}
+
+.mart-feature-box p {
+  font-size: 1.02rem;
+  line-height: 1.72;
+  color: #6b4070;
+}
+
+/* Challenge Section */
+.mart-challenge {
+  padding: 90px 60px;
+  background: white;
+  text-align: center;
+}
+
+.challenge-text {
+  font-size: clamp(1.55rem, 3.2vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.35;
+  max-width: 820px;
+  margin: 0 auto;
+  color: #2d0f2f;
+}
+
+/* Responsive Design */
+@media (max-width: 960px) {
+  .mart-hero { padding: 80px 24px; }
+  .mart-content { flex-direction: column; gap: 50px; text-align: center; }
+  .mart-pos-section { order: -1; }
+  .mart-features, .mart-challenge { padding: 70px 24px; }
+}
