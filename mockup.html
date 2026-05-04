@@ -8,14 +8,24 @@
 </head>
 <body>
 
+<!-- Grain texture overlay — pure CSS, no image file needed -->
+<div class="grain-overlay"></div>
+
+<!-- Soft ambient blobs in background -->
+<div class="bg-blob bg-blob-1"></div>
+<div class="bg-blob bg-blob-2"></div>
+<div class="bg-blob bg-blob-3"></div>
+
+<!-- ══════════ NAVIGATION ══════════ -->
 <nav class="nav-wrap">
-  <div class="nav-pill">
+  <div class="nav-pill" id="navbar">
     <div class="nav-left">
       <div class="logo-box">
-        <img src="Screenshot_23-4-2026_12464_paycliq.africa-removebg-preview.png" alt="PayCliq Q">
+        <img src="Screenshot_23-4-2026_12464_paycliq.africa-removebg-preview.png" alt="PayCliq">
       </div>
       <span class="logo-text">PAYCLIQ</span>
     </div>
+
     <div class="nav-center">
       <div class="nav-item dropdown" id="productBtn">
         <span>Products</span>
@@ -24,37 +34,24 @@
         </svg>
         <div class="dropdown-menu" id="productMenu">
           <a href="paycliq-mart.html" class="drop-item">
-            <div class="drop-icon"></div>
-            <div>
-              <strong>PayCliq Mart</strong>
-              <span>Sell anywhere, get paid instantly</span>
-            </div>
+            <div class="drop-icon">🛒</div>
+            <div><strong>PayCliq Mart</strong><span>Sell anywhere, get paid instantly</span></div>
           </a>
           <a href="#" class="drop-item">
-            <div class="drop-icon"></div>
-            <div>
-              <strong>PayCliq Pro</strong>
-              <span>Advanced tools for growing businesses</span>
-            </div>
+            <div class="drop-icon">⚡</div>
+            <div><strong>PayCliq Pro</strong><span>Advanced tools for growing businesses</span></div>
           </a>
           <a href="#" class="drop-item">
-            <div class="drop-icon"></div>
-            <div>
-              <strong>Invoicing</strong>
-              <span>Create and send professional invoices</span>
-            </div>
+            <div class="drop-icon">📄</div>
+            <div><strong>Invoicing</strong><span>Create and send professional invoices</span></div>
           </a>
           <a href="#" class="drop-item">
-            <div class="drop-icon"></div>
-            <div>
-              <strong>Book Keeping</strong>
-              <span>Track every naira automatically</span>
-            </div>
+            <div class="drop-icon">📒</div>
+            <div><strong>Book Keeping</strong><span>Track every naira automatically</span></div>
           </a>
         </div>
       </div>
-
-      <!-- Company Dropdown -->
+          <!-- Company Dropdown -->
       <div class="nav-item company-item" id="companyBtn">
         <span>Company</span>
         <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -79,7 +76,7 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- ══════════ HERO ══════════ -->
 <section class="hero">
   <div class="hero-text">
     <div class="hero-tag">
@@ -112,32 +109,55 @@
   </div>
 
   <div class="hero-image">
-    <div class="pos-wrap" id="posWrap">
-      <div class="pos-glow"></div>
-      <img src="pos.png" class="pos" id="posImg" alt="PayCliq POS Terminal">
-      <div class="badge badge-tl">
-        <span class="badge-icon">⚡</span>
+    <div class="person-wrap">
+
+      <!-- Purple-orange light beam from laptop screen -->
+      <div class="laptop-glow"></div>
+      <div class="laptop-beam"></div>
+
+      <!-- The man on the bean bag -->
+      <img
+        src="man 2.png"
+        class="hero-person"
+        alt="Business owner using PayCliq"
+      >
+
+      <!-- Dashed orbit ring around the figure -->
+      <div class="orbit-ring"></div>
+
+      <!-- Floating badges — like the woman picture -->
+      <div class="orbit-badge ob-1">
+        <span class="ob-icon">⚡</span>
         <span>Instant settlement</span>
       </div>
-      <div class="badge badge-br">
-        <span class="badge-green-dot"></span>
+
+      <div class="orbit-badge ob-2">
+        <span class="ob-green-dot"></span>
         <span>Transaction approved</span>
       </div>
+
+      <div class="orbit-badge ob-3">
+        <span class="ob-icon">📦</span>
+        <span>Manage inventory</span>
+      </div>
+
     </div>
   </div>
 </section>
-<!-- Features Section -->
+
+
+<!-- ══════════ FEATURES TICKER ══════════ -->
 <section class="features">
   <div class="feature-row">
     <div class="feature-track">
       <span class="feature-pill">Instant payment confirmation</span>
-      <span class="feature-pill">Invoice & receipt generation</span>
+      <span class="feature-pill">Invoice &amp; receipt generation</span>
       <span class="feature-pill">Manage inventory</span>
       <span class="feature-pill">Flexible settlement options</span>
       <span class="feature-pill">Automated reconciliation</span>
       <span class="feature-pill">Advanced analytics</span>
       <span class="feature-pill">Instant payment confirmation</span>
-      <span class="feature-pill">Invoice & receipt generation</span>
+      <span class="feature-pill">Invoice &amp; receipt generation</span>
       <span class="feature-pill">Manage inventory</span>
       <span class="feature-pill">Flexible settlement options</span>
       <span class="feature-pill">Automated reconciliation</span>
@@ -151,7 +171,8 @@
   </div>
 
   <div class="features-row">
-    <div class="feature-block slide-left" id="feat1">
+
+    <div class="feature-block slide-up" id="feat1">
       <div class="feat-visual">
         <canvas id="flowCanvas" width="300" height="300"></canvas>
       </div>
@@ -162,12 +183,7 @@
       </div>
     </div>
 
-    <div class="feature-block slide-right" id="feat2">
-      <div class="feat-text">
-        <span class="feat-num">02</span>
-        <h3>Bank-grade fraud intelligence</h3>
-        <p>Our adaptive risk engine analyses every transaction in under 80ms.</p>
-      </div>
+    <div class="feature-block slide-up" id="feat2">
       <div class="feat-visual">
         <div class="shield-scene">
           <div class="s-ring s-ring-3"></div>
@@ -175,17 +191,24 @@
           <div class="s-ring s-ring-1"></div>
           <div class="shield-body">
             <svg viewBox="0 0 60 72" fill="none" width="52">
-              <path d="M30 3L5 15v21c0 16 10.5 30.5 25 34 14.5-3.5 25-18 25-34V15L30 3z" stroke="#ff7a00" stroke-width="2" fill="rgba(255,122,0,0.1)"/>
-              <path d="M20 36l7 7 13-14" stroke="#ff7a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M30 3L5 15v21c0 16 10.5 30.5 25 34 14.5-3.5 25-18 25-34V15L30 3z"
+                    stroke="#ff7a00" stroke-width="2" fill="rgba(255,122,0,0.1)"/>
+              <path d="M20 36l7 7 13-14" stroke="#ff7a00" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <div class="shield-orbit" id="shieldOrbit"></div>
           <div class="shield-scan"></div>
         </div>
       </div>
+      <div class="feat-text">
+        <span class="feat-num">02</span>
+        <h3>Bank-grade fraud intelligence</h3>
+        <p>Our adaptive risk engine analyses every transaction in under 80ms. Genuine payments always go through.</p>
+      </div>
     </div>
 
-    <div class="feature-block slide-left" id="feat3">
+    <div class="feature-block slide-up" id="feat3">
       <div class="feat-visual">
         <div class="settle-scene" id="settleScene">
           <div class="settle-bars" id="settleBars">
@@ -201,7 +224,8 @@
           <div class="settle-check" id="settleCheck">
             <svg viewBox="0 0 40 40" fill="none" width="40">
               <circle cx="20" cy="20" r="18" stroke="#ff7a00" stroke-width="2"/>
-              <path class="check-path" d="M12 20l6 6 10-11" stroke="#ff7a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="check-path" d="M12 20l6 6 10-11" stroke="#ff7a00" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <span>All funds settled</span>
           </div>
@@ -213,10 +237,12 @@
         <p>Funds move to your bank account daily — or on demand — with clean records attached.</p>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- Partners -->
+
+<!-- ══════════ PARTNERS ══════════ -->
 <section class="partners">
   <p class="section-tag light">Trusted network</p>
   <h2>Backed by banks your business already trusts</h2>
@@ -240,7 +266,8 @@
   </div>
 </section>
 
-<!-- CTA Section -->
+
+<!-- ══════════ CTA ══════════ -->
 <section class="cta-section">
   <div class="cta-text">
     <p class="section-tag">Get started today</p>
@@ -275,7 +302,8 @@
   </div>
 </section>
 
-<!-- Footer -->
+
+<!-- ══════════ FOOTER ══════════ -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
