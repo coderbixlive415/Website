@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<!-- Navigation -->
 <nav class="nav-wrap">
   <div class="nav-pill">
     <div class="nav-left">
@@ -24,7 +23,6 @@
           <path d="M6 9l6 6 6-6"/>
         </svg>
         <div class="dropdown-menu" id="productMenu">
-          <!-- UPDATED: PayCliq Mart now links to its own page -->
           <a href="paycliq-mart.html" class="drop-item">
             <div class="drop-icon"></div>
             <div>
@@ -55,9 +53,26 @@
           </a>
         </div>
       </div>
-      <a href="#" class="nav-link">Company</a>
+
+      <!-- Company Dropdown -->
+      <div class="nav-item company-item" id="companyBtn">
+        <span>Company</span>
+        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+        <div class="company-dropdown" id="companyMenu">
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+
+      <a href="#" class="nav-link">FAQ</a>
       <a href="#" class="nav-link">Login</a>
     </div>
+    
     <div class="nav-right">
       <a href="#" class="cta-outline">Register your business →</a>
     </div>
@@ -100,12 +115,10 @@
     <div class="pos-wrap" id="posWrap">
       <div class="pos-glow"></div>
       <img src="pos.png" class="pos" id="posImg" alt="PayCliq POS Terminal">
-      <!-- Badge 1 -->
       <div class="badge badge-tl">
         <span class="badge-icon">⚡</span>
         <span>Instant settlement</span>
       </div>
-      <!-- Badge 2 -->
       <div class="badge badge-br">
         <span class="badge-green-dot"></span>
         <span>Transaction approved</span>
@@ -113,7 +126,6 @@
     </div>
   </div>
 </section>
-
 <!-- Features Section -->
 <section class="features">
   <div class="feature-row">

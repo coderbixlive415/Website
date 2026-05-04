@@ -293,3 +293,17 @@ track.style.transform = `translateY(-${current * wordHeight}px)`;
     }
   });
 })();
+const companyBtn = document.getElementById('companyBtn');
+const companyMenu = document.getElementById('companyMenu');
+
+if (companyBtn && companyMenu) {
+  companyBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = companyMenu.classList.toggle('open');
+    companyBtn.classList.toggle('open', isOpen);
+  });
+}
+document.addEventListener('click', () => {
+  if (companyMenu) companyMenu.classList.remove('open');
+  if (companyBtn) companyBtn.classList.remove('open');
+});

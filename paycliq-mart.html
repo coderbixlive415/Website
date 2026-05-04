@@ -8,7 +8,6 @@
 </head>
 <body>
 
-
 <nav class="nav-wrap">
   <div class="nav-pill">
     <div class="nav-left">
@@ -57,7 +56,23 @@
           </a>
         </div>
       </div>
-      <a href="#" class="nav-link">Company</a>
+
+      <!-- Company Dropdown -->
+      <div class="nav-item company-item" id="companyBtn">
+        <span>Company</span>
+        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+        <div class="company-dropdown" id="companyMenu">
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+
+      <a href="#" class="nav-link">FAQ</a>
       <a href="#" class="nav-link">Login</a>
     </div>
     
@@ -67,6 +82,7 @@
   </div>
 </nav>
 
+<!-- Rest of PayCliq Mart content -->
 <section class="mart-hero">
   <div class="mart-container">
     <div class="mart-text">
@@ -107,13 +123,11 @@
       <h3>Accept All Cards</h3>
       <p>You can accept card payments from all Nigerian banks and card schemes (Visa, MasterCard, and Verve).</p>
     </div>
-    
     <div class="mart-feature-box">
       <img src="multiple.png" alt="Multiple Payment Options" class="feature-box-img">
       <h3>Multiple Payment Option</h3>
       <p>Your customers can also make payments via bank transfer, USSD code, NQR or Card.</p>
     </div>
-    
     <div class="mart-feature-box">
       <img src="instant.jpg" alt="Same Day Settlement" class="feature-box-img">
       <h3>Same Day Settlement</h3>
